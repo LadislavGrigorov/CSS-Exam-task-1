@@ -1,0 +1,102 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.gradient(@start-color, @start-percent, @end-color, @end-percent) {
+    background: #d29bff; /* Old browsers */
+    background: -moz-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@start-percent,@start-color), color-stop(@end-percent,@end-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @start-color @start-percent,@end-color @end-percent); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @start-color @start-percent,@end-color @end-percent); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @start-color @start-percent,@end-color @end-percent); /* IE10+ */
+    background: linear-gradient(to bottom, @start-color @start-percent,@end-color @end-percent); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@start-color', endColorstr='@end-color',GradientType=0 ); /* IE6-9 */
+}
+
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+        display: block;
+        content: "";
+        height: 0;
+        clear: both;
+    }
+}
+
+body {
+    @default-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @default-width: 960px;
+
+    font-family: @default-font-family;
+    font-size: 14px;
+    color: #575E5B;
+
+    #wrapper {
+        width: @default-width;
+        margin: 0 auto;
+
+        .clear {
+            clear: both;
+        }
+
+        & > header {
+            padding: 16px 20px 8px 20px;
+            ;
+            background-image: url(images/header-bg.png);
+
+            & > h1 {
+                font-size: 16px;
+                text-transform: uppercase;
+                display: inline-block;
+            }
+
+            #nav {
+                float: right;
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        display: inline-block;
+                        padding: 5px;
+                        vertical-align: central;
+                    }
+                }
+            }
+        }
+
+        #searchBar {
+            margin-left: 5px;
+            background: #000;
+            padding: 10px 5px;
+
+            a {
+                text-decoration: none;
+                color: #C6C6C6;
+            }
+
+            #search {
+                float: right;
+                display: inline-block;
+            }
+
+            #archives {
+                display: inline-block;
+                color: #C6C6C6;
+            }
+        }
+
+        #content {
+            h1 {
+                font-size: 24px;
+                margin: 16px 5px;
+            }
+
+            p {
+                margin: 15px 0 15px 5px;
+            }
+        }
+    }
+}
